@@ -7,6 +7,7 @@ import { Environment } from './interface';
 export const environment: Environment = {
   production: false,
   apiKey: 'AIzaSyBq0OA-864pGOfG3bXRtI-VcC2EF_XIVN8',
+  fbDBUrl: 'https://udemy-blog-906e5.firebaseio.com'
 };
 
 /*
