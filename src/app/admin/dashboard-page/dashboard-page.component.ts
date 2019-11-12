@@ -27,10 +27,15 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   }
 
   remove(id: string) {
-
+    this.postsService.remove(id)
+      .pipe(takeUntil(this.unsubscriber))
+      .subscribe(() => {
+      this.posts = this.posts.filter(post => post.id !== id);
+    });
   }
 
   ngOnDestroy(): void {
     this.unsubscriber.next();
+    this.unsubscriber.complete();
   }
 }

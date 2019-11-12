@@ -37,4 +37,8 @@ export class PostsService {
 
     // .pipe(map((response: any) => response));
   }
+
+  remove(id: string): Observable<void> {
+    return this.http.delete<void>(`${environment.fbDBUrl}/posts/${id}.json`);
+  }
 }
