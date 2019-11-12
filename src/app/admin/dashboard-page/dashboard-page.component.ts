@@ -13,6 +13,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
   private unsubscriber: Subject<void> = new Subject<void>();
   posts: Post[] = [];
+  searchStr = '';
 
 
   constructor(private postsService: PostsService) { }
