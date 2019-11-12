@@ -20,8 +20,10 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe( (params: Params) => {
-      if (params.loginAgain) {
+      if (params['loginAgain']) {
         this.message = 'Please, input your credentials';
+      } else if (params['authFailed']) {
+        this.message = 'Session is closed';
       }
     });
 
