@@ -18,7 +18,7 @@
       *ngIf="form.get('email').touched && form.get('email').invalid"
       class="validation">
       <small *ngIf="form.get('email').errors.required">This field is required</small>
-      <small *ngIf="form.get('email').errors.email">Input correct email</small>
+      <small *ngIf="form.get('email').errors.email">Please enter valid email</small>
     </div>
   </div>
 
