@@ -33,8 +33,8 @@
       class="validation">
       <small *ngIf="form.get('password').errors.required">This field is required</small>
       <small *ngIf="form.get('password').errors.minlength">
-        Password to short
-        ({{form.get('password').errors.minlength.actualLength}})
+        Password to short:
+        {{form.get('password').errors.minlength.actualLength}}
         from
         {{form.get('password').errors.minlength.requiredLength}}
       </small>
@@ -46,3 +46,9 @@
     class="btn btn-primary"
     [disabled]="form.invalid || submitted">Submit</button>
 </form>
+<br>
+<br>
+<p class="text-center">
+  <small>admin@mail.com</small> <br>
+  <small>123456</small>
+</p>
