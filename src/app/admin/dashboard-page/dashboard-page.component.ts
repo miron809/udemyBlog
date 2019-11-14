@@ -3,6 +3,7 @@ import { PostsService } from '../../shared/posts.service';
 import { Post } from '../../shared/interfaces';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { AlertService } from '../shared/services/alert.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -16,7 +17,9 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   searchStr = '';
 
 
-  constructor(private postsService: PostsService) { }
+  constructor(
+    private postsService: PostsService,
+    private alertService: AlertService) { }
 
   ngOnInit() {
     this.postsService.getAll()
@@ -31,6 +34,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscriber))
       .subscribe(() => {
       this.posts = this.posts.filter(post => post.id !== id);
+      this.alertService.danger(`Post with id: ${id} has been deleted`);
     });
   }
 
