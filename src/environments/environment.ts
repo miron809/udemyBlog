@@ -6,8 +6,8 @@ import { Environment } from './interface';
 
 export const environment: Environment = {
   production: false,
-  apiKey: 'AIzaSyDW5eMuZb9GM-37INNKyjEeXhk4Rxu6pJc',
-  fbDBUrl: 'https://udemy-138c7.firebaseio.com'
+  apiKey: 'AIzaSyBq0OA-864pGOfG3bXRtI-VcC2EF_XIVN8',
+  fbDBUrl: 'https://udemy-blog-906e5.firebaseio.com'
 };
 
 /*
